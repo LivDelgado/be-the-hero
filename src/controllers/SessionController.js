@@ -10,9 +10,11 @@ module.exports = {
             .first();
 
         if (!ong) {
-            return response.json(400).json({error: "No ONG found with this ID"});
+            return response.json(400).json({
+                error: "No ONG found with this ID"
+            });
+        } else {
+            return response.json(ong);
         }
-
-        return response.json(ong);
     }
 };
